@@ -66,10 +66,10 @@ var DateUtil = {
 
     toDate(format, timestamp){  
         var a, jsdate=((timestamp) ? new Date(timestamp*1000) : new Date()); 
-        var pad = function(n, c){ 
+        var pad = function(n, c){
             if((n = n + "").length < c){ 
                 return new Array(++c - n.length).join("0") + n; 
-            } else { 
+            } else {
                 return n; 
             } 
         }; 

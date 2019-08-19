@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/mygit.iml" filepath="$PROJECT_DIR$/mygit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/archymvc.iml" filepath="$PROJECT_DIR$/archymvc.iml" />
     </modules>
   </component>
 </project>
