@@ -1,0 +1,75 @@
+{include file="../common/header.tpl" title=foo1 logo=true}
+<link rel="stylesheet" href="{$StaticRoot}/css/netbarInfo.css">
+
+<div class="container-fluid">
+  <div class="row">
+    <button class="btn btn-success add-shop" data-toggle="modal" name="add_shop"  onclick="Shop.openShopModal(0,null)">新增门店</button>
+  </div>
+  <div class="row">
+    <table id="shopList" class="table table-bordered">
+      <tr>
+        <th>门店编号</th>
+        <th>门店名称</th>
+        <th>门店介绍</th>
+        <th>地址</th>
+        <th>负责人</th>
+        <th>电话</th>
+        <th>操作</th>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div id="addShop" class="modal fade add-shop-modal" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" name="title">新增门店</h4>
+        <input type="hidden" name="sid" value="0"/>
+        <input type="hidden" name="dataversion" value="1"/>
+      </div>
+      <div class="modal-body">
+        <div class="form-horizontal">
+          <div class="form-group form-group-sm">
+            <div class="col-xs-6">
+              <div class="row bar-name">
+                <label class="col-xs-4 control-label">门店名称：</label>
+                <div class="col-xs-8">
+                  <input type="text" name="shopname" class="form-control">
+                </div>
+              </div>
+              <div class="row">
+                <label class="col-xs-4 control-label">门店介绍：</label>
+                <div class="col-xs-8">
+                  <input type="text" name="detail" class="form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group form-group-sm">
+            <label class="col-xs-2 control-label">负责人：</label>
+            <div class="col-xs-4"><input type="text" name="master" class="form-control"></div>
+          </div>
+          <div class="form-group form-group-sm">
+            <label class="col-xs-2 control-label">电话：</label>
+            <div class="col-xs-4"><input type="text" name="thephone" class="form-control"></div>
+            <label class="col-xs-2 control-label">成立时间：</label>
+            <div class="col-xs-4"><input name="setuptime" type="text" id="buildTime" class="form-control"></div>
+          </div>
+          <div class="form-group form-group-sm">
+            <label class="col-xs-2 control-label">地址：</label>
+            <div class="col-xs-8"><input name="address" type="text" class="form-control"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取 消</button>
+        <button type="button" class="btn btn-primary" onclick='Shop.save();'>确 认</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script src="{$StaticRoot}/js/web/admin/shop.js"></script>
+
+{include file="../common/footer.tpl"}
