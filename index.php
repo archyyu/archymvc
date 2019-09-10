@@ -15,9 +15,15 @@
 
 
 global $_GPC;
-$_W = $_GPC = array();
+
+$_GPC = array();
+
+$_GPC = array_merge($_GPC, $_POST);
+$_GPC = ihtmlspecialchars($_GPC);
 
 include('classloader.php');
+
+
 
 
 class Router {
@@ -28,27 +34,17 @@ class Router {
 
 
     public function __call($name,$arguments){
-
-    	//
-
+        echo $name;
 	}
 
 
 	public function duty(){
 
-
-
-       (new controller\cashier\DutyController())->$f();
    	}
    
     
 }
 
+echo $_SERVER['SERVER_NAME'];
 
-$c = $_GPC['c'];
-
-if(isset($c) == false){
-    $c = "product";
-}
-
-(new Router())->$c();
+echo $_SERVER["HTTP_REFERER"];
