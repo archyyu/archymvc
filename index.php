@@ -19,32 +19,22 @@ global $_GPC;
 $_GPC = array();
 
 $_GPC = array_merge($_GPC, $_POST);
-$_GPC = ihtmlspecialchars($_GPC);
+$_GPC = array_merge($_GPC, $_GET);
+//$_GPC = ihtmlspecialchars($_GPC);
 
+include('setting.php');
 include('classloader.php');
 
 
 
+$do = $_GPC["do"];
 
-class Router {
-    
-    public function __construct() {
-        
-    }
+$c = $_GPC["c"];
 
+$c = str_replace("/","\\",$c);
 
-    public function __call($name,$arguments){
-        echo $name;
-	}
+$controllerName = "controller\\".$c."Controller";
 
+$controller = new $controllerName();
+$controller->$do();
 
-	public function duty(){
-
-   	}
-   
-    
-}
-
-echo $_SERVER['SERVER_NAME'];
-
-echo $_SERVER["HTTP_REFERER"];

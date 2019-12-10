@@ -23,15 +23,15 @@ class Controller {
 
     function __construct() {
 
-        $this->smarty = new \Smarty();
-        $this->smarty->debugging = false;
-        $this->smarty->caching = false;
-        $this->smarty->cache_lifetime = 0;
-        $this->smarty->assign("StaticRoot", StaticRoot);
-        $this->smarty->setTemplateDir(CASHROOT . 'template/web');
+//        $this->smarty = new \Smarty();
+//        $this->smarty->debugging = false;
+//        $this->smarty->caching = false;
+//        $this->smarty->cache_lifetime = 0;
+//        $this->smarty->assign("StaticRoot", StaticRoot);
+//        $this->smarty->setTemplateDir(CASHROOT . 'template/web');
         
-        $this->shopModel = new \model\Shop();
-        $this->initShopList();
+//        $this->shopModel = new \model\Shop();
+//        $this->initShopList();
     }
     
     public function initShopList(){

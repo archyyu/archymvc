@@ -19,11 +19,12 @@ class IndexController extends Controller{
     //put your code here
     public function __construct() {
         parent::__construct();
-        logInfo("index contruct");
+        echo("index contruct");
     }
     
     public function index(){
-        $this->smarty->display('welcome.tpl');
+        echo "Index Controller index";
+        //$this->smarty->display('welcome.tpl');
     }
     
     
