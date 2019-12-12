@@ -8,7 +8,9 @@
 
 namespace controller;
 
-use controller\Controller;
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
 
 /**
  * Description of IndexController
@@ -17,13 +19,17 @@ use controller\Controller;
  */
 class IndexController extends Controller{
     //put your code here
+
+    private $log;
+
     public function __construct() {
         parent::__construct();
-        echo("index contruct");
+        $this->log = new Logger("IndexController");
+        $this->log->pushHandler(new StreamHandler("info.log",Logger::INFO));
     }
     
     public function index(){
-        echo "Index Controller index";
+        $this->log->info("IndexController index");
         //$this->smarty->display('welcome.tpl');
     }
     

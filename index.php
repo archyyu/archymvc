@@ -22,8 +22,12 @@ $_GPC = array_merge($_GPC, $_POST);
 $_GPC = array_merge($_GPC, $_GET);
 //$_GPC = ihtmlspecialchars($_GPC);
 
-include('setting.php');
-include('classloader.php');
+
+require 'setting.php';
+require 'classloader.php';
+require 'vendor/autoload.php';
+
+
 
 
 

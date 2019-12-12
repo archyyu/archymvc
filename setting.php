@@ -18,11 +18,12 @@ $config['db']['master']['pconnect'] = 0;
 $config['db']['master']['tablepre'] = 'ims_';
 
 
-$config['setting']['redis']['server'] = '127.0.0.1';
+$config['setting']['redis']['server'] = '192.168.0.120';
 $config['setting']['redis']['port'] = 6379;
 $config['setting']['redis']['pconnect'] = 0;
 $config['setting']['redis']['timeout'] = 30;
 $config['setting']['redis']['session'] = 0;
+$config['setting']['redis']['password'] = "Sc@2019!";
 
 
 global $_W;
