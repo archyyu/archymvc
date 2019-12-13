@@ -25,7 +25,7 @@ class Request
 
     }
 
-    public function get($key,$default){
+    public function get($key,$default = null){
         if(isset($this->getParameters[$key])){
             return $this->getParameters[$key];
         }
@@ -36,7 +36,7 @@ class Request
         }
     }
 
-    public function post($key,$default){
+    public function post($key,$default = null){
         if(isset($this->postParameters[$key])){
             return $this->postParameters[$key];
         }
@@ -48,7 +48,7 @@ class Request
 
     }
 
-    public function input($key,$default){
+    public function input($key,$default = null){
 
         if(isset($this->postParameters[$key])){
             return $this->postParameters[$key];

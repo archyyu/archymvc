@@ -9,6 +9,7 @@
 namespace controller;
 
 
+use filter\Md5Filter;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
@@ -26,16 +27,21 @@ class IndexController extends Controller{
         parent::__construct();
         $this->log = new Logger("IndexController");
         $this->log->pushHandler(new StreamHandler("info.log",Logger::INFO));
+
+        $this->addFilter(new Md5Filter());
+
     }
     
     public function index(){
         $this->log->info("IndexController index");
+        return "haha";
         //$this->smarty->display('welcome.tpl');
     }
 
     public function testParams($uid,$content){
 
         $this->log->info("uid: $uid, content $content");
+        return "haha";
 
     }
     

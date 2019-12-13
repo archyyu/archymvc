@@ -11,6 +11,7 @@ namespace controller;
 use common\Code;
 use common\Request;
 use common\Response;
+use core\app\Filter;
 use Smarty;
 
 /**
@@ -28,7 +29,11 @@ class Controller {
 
     protected $response;
 
+    protected $filterList;
+
     function __construct() {
+
+        $this->filterList = array();
 
         $this->request = new Request();
         $this->response = new Response();
@@ -42,6 +47,22 @@ class Controller {
         
         $this->shopModel = new \model\Shop();
         $this->initShopList();
+    }
+
+    public function getRequest(){
+        return $this->request;
+    }
+
+    public function getResponse(){
+        return $this->response;
+    }
+
+    public function addFilter($filter){
+        $this->filterList[] = $filter;
+    }
+
+    public function getFilterList(){
+        return $this->filterList;
     }
     
     public function initShopList(){
