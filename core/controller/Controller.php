@@ -9,6 +9,8 @@
 namespace controller;
 
 use common\Code;
+use common\Request;
+use common\Response;
 use Smarty;
 
 /**
@@ -22,7 +24,14 @@ class Controller {
 
     protected $shopModel;
 
+    protected $request;
+
+    protected $response;
+
     function __construct() {
+
+        $this->request = new Request();
+        $this->response = new Response();
 
         $this->smarty = new Smarty();
         $this->smarty->debugging = false;
@@ -164,5 +173,15 @@ class Controller {
             }
         }
     }
+
+
+
+    public final function getMethodParamDefines($method) {
+        return (new \ReflectionMethod($this, $method))->getParameters();
+    }
+
+
+
+
     
 }

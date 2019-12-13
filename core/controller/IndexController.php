@@ -32,6 +32,12 @@ class IndexController extends Controller{
         $this->log->info("IndexController index");
         //$this->smarty->display('welcome.tpl');
     }
+
+    public function testParams($uid,$content){
+
+        $this->log->info("uid: $uid, content $content");
+
+    }
     
     
 }
