@@ -18,6 +18,8 @@ class App
 
     private $c;
 
+    private $router;
+
 
     public function __construct() {
 
@@ -31,6 +33,9 @@ class App
         $this->do = $_GPC["do"];
         $this->c = $_GPC["c"];
 
+        $this->router = new Router();
+        $this->run();
+
     }
 
     public function run(){
@@ -38,9 +43,12 @@ class App
         global $_GPC;
         $this->c = str_replace("/","\\",$this->c);
 
-        $controllerName = "controller\\".$this->c."Controller";
+        $controller = $this->router->getController($this->c);
 
-        $controller = new $controllerName();
+        if($controller == null){
+            $controllerName = "controller\\".$this->c."Controller";
+            $controller = new $controllerName();
+        }
 
         $filterList = $controller->getFilterList();
         foreach($filterList as $filter){

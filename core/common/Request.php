@@ -62,4 +62,10 @@ class Request
 
     }
 
+    public function header($key,$default = null){
+
+
+
+    }
+
 }
